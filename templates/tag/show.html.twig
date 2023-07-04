@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.tag_details'|trans({'%id%': tag.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <h1 class="user-details">{{ 'title.tag_details'|trans({'%id%': tag.id|default('')}) }}</h1>
+    {% if tag is defined and tag|length %}
+
+            <h1 class="user-text">{{ 'label.id'|trans }}</h1>
+            <h1 class="user-data">{{ tag.id }}</h1>
+            <h1 class="user-text">{{ 'label.title'|trans }}</h1>
+            <h1 class="user-data">{{ tag.title }}</h1>
+
+
+        <h2 class="user-details">{{ 'label.tasks_with_this_tag'|trans }}</h2>
+        {% if tag.tasks is not empty %}
+            <ul>
+                {% for task in tag.tasks %}
+                    <li class="user-data">{{ task.title }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>{{ 'message.no_tasks_available'|trans }}</p>
+        {% endif %}
+
+        <p>
+            <a class="back-btn" href="{{ url('tag_index') }}" title="{{ 'Back to list'|trans }}">
+                {{ 'label.back_to_list'|trans }}
+            </a>
+        </p>
+        </div>
+    {% else %}
+        <p>
+            {{ 'message.record_not_found'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}

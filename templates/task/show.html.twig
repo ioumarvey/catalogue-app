@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.product_details'|trans({'%id%': task.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="user-details">{{ 'title.product_details'|trans({'%id%': task.id|default('')}) }}</h1>
+        {% if task %}
+            <h1 class="user-text">{{ 'label.id'|trans }}</h1>
+            <h1 class="user-data">{{ task.id }}</h1>
+            <h1 class="user-text">{{ 'label.title'|trans }}</h1>
+            <h1 class="user-data">{{ task.title }}</h1>
+            <h1 class="user-text">{{ 'label.category'|trans }}</h1>
+            <h1 class="user-data">{{ task.category.title }}</h1>
+            <h2 class="user-text">{{ 'label.tags'|trans }}</h2>
+
+            {% if task.tags is not empty %}
+                <ul>
+                    {% for tag in task.tags %}
+                        <li class="user-data">{{ tag.title }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>{{ 'message.no_tasks_available'|trans }}</p>
+            {% endif %}
+
+
+            <h2 class="user-text">{{ 'label.comments'|trans }}</h2>
+            {% if task.comments is not empty %}
+                <ul>
+                    {% for comment in task.comments %}
+                        <li style="color: var(--black)">
+                            <h1 class="user-data"><strong>{{ 'label.nick'|trans }}</strong>: {{ comment.nick }}</h1>
+                            <h1 class="user-data"><strong>{{ 'label.email'|trans }}</strong>: {{ comment.author.email }}</h1>
+                            <h1 class="user-data"><strong>{{ 'label.content'|trans }}</strong>: {{ comment.content }}</h1>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>{{ 'message.no_comments_available'|trans }}</p>
+            {% endif %}
+
+            {% if is_granted('ROLE_USER') %}
+                <a class="add-btn" href="{{ path('comment_create', {'id': task.id}) }}">
+                    {{ 'action.add_comment'|trans }}
+                </a>
+            {% endif %}
+        {% else %}
+            <p>
+                {{ 'message.record_not_found'|trans }}
+            </p>
+        {% endif %}
+
+        <p>
+            <a class="back-btn" href="{{ path('task_index') }}" title="{{ 'Back to list'|trans }}">
+                {{ 'label.back_to_list'|trans }}
+            </a>
+        </p>
+    </div>
+{% endblock %}
+

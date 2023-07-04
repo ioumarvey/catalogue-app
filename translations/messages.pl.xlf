@@ -1,0 +1,431 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+
+    <body>
+      <trans-unit id="title.user_email_edit">
+        <source>title.user_email_edit</source>
+        <target>Edytuj email</target>
+      </trans-unit>
+      <trans-unit id="title.user_password_edit">
+        <source>title.user_password_edit</source>
+        <target>Edytuj hasło</target>
+      </trans-unit>
+      <trans-unit id="label.actions">
+        <source>label.actions</source>
+        <target>Działania</target>
+      </trans-unit>
+      <trans-unit id="label.id">
+        <source>label.id</source>
+        <target>Id</target>
+      </trans-unit>
+      <trans-unit id="label.title">
+        <source>label.title</source>
+        <target>Tytuł</target>
+      </trans-unit>
+      <trans-unit id="label.content">
+        <source>label.content</source>
+        <target>Treść</target>
+      </trans-unit>
+      <trans-unit id="label.tag">
+        <source>label.tag</source>
+        <target>Tag</target>
+      </trans-unit>
+      <trans-unit id="message.empty_list">
+        <source>message.empty_list</source>
+        <target>Lista jest pusta</target>
+      </trans-unit>
+      <trans-unit id="message.record_not_found">
+        <source>message.record_not_found</source>
+        <target>Nie znaleziono rekordu</target>
+      </trans-unit>
+      <trans-unit id="title.record_list">
+        <source>title.record_list</source>
+        <target>Lista produktów</target>
+      </trans-unit>
+      <trans-unit id="message.created_successfully">
+        <source>message.created_successfully</source>
+        <target>Utworzono pomyślnie</target>
+      </trans-unit>
+      <trans-unit id="message.deleted_successfully">
+        <source>message.deleted_successfully</source>
+        <target>Usunięto pomyślnie</target>
+      </trans-unit>
+      <trans-unit id="action.back_to_list">
+        <source>action.back_to_list</source>
+        <target>Wróć do listy</target>
+      </trans-unit>
+      <trans-unit id="title.tag_list">
+        <source>title.tag_list</source>
+        <target>Lista tagów</target>
+      </trans-unit>
+      <trans-unit id="title.tag_create">
+        <source>title.tag_create</source>
+        <target>Stwórz tag</target>
+      </trans-unit>
+      <trans-unit id="action.save">
+        <source>action.save</source>
+        <target>Zapisz</target>
+      </trans-unit>
+      <trans-unit id="title.tag_delete">
+        <source>title.tag_delete</source>
+        <target>Usuń tag</target>
+      </trans-unit>
+      <trans-unit id="action.delete">
+        <source>action.delete</source>
+        <target>Usuń</target>
+      </trans-unit>
+      <trans-unit id="title.tag_edit">
+        <source>title.tag_edit</source>
+        <target>Edytuj tag</target>
+      </trans-unit>
+
+
+      <trans-unit id="action.edit">
+        <source>action.edit</source>
+        <target>Edytuj</target>
+      </trans-unit>
+      <trans-unit id="action.create">
+        <source>action.create</source>
+        <target>Stwórz</target>
+      </trans-unit>
+      <trans-unit id="label.name">
+        <source>label.name</source>
+        <target>Nazwa</target>
+      </trans-unit>
+      <trans-unit id="action.show">
+        <source>action.show</source>
+        <target>Pokaż</target>
+      </trans-unit>
+      <trans-unit id="title.tag_details">
+        <source>title.tag_details</source>
+        <target>Szczegóły tagu</target>
+      </trans-unit>
+      <trans-unit id="label.tags">
+        <source>label.tags</source>
+        <target>Tagi</target>
+      </trans-unit>
+
+      <trans-unit id="label.created_at">
+        <source>label.created_at</source>
+        <target>Stworzono</target>
+      </trans-unit>
+      <trans-unit id="title.user_list">
+        <source>title.user_list</source>
+        <target>Lista użytkowników</target>
+      </trans-unit>
+      <trans-unit id="action.logout">
+        <source>action.logout</source>
+        <target>Wyloguj</target>
+      </trans-unit>
+      <trans-unit id="action.login">
+        <source>action.login</source>
+        <target>Zaloguj</target>
+      </trans-unit>
+      <trans-unit id="title.password.edit">
+        <source>title.password.edit</source>
+        <target>Edytuj hasło</target>
+      </trans-unit>
+      <trans-unit id="label.user_id">
+        <source>label.user_id</source>
+        <target>ID użytkownika</target>
+      </trans-unit>
+      <trans-unit id="label.user_email">
+        <source>label.user_email</source>
+        <target>Email użytkownika</target>
+      </trans-unit>
+      <trans-unit id="label.email">
+        <source>label.email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="label.password">
+        <source>label.password</source>
+        <target>Hasło</target>
+      </trans-unit>
+      <trans-unit id="label.repeat_password">
+        <source>label.repeat_password</source>
+        <target>Powtórz hasło</target>
+      </trans-unit>
+      <trans-unit id="label.edit">
+        <source>label.edit</source>
+        <target>Edytuj</target>
+      </trans-unit>
+      <trans-unit id="action.edit_email">
+        <source>action.edit_email</source>
+        <target>Edytuj email</target>
+      </trans-unit>
+      <trans-unit id="action.edit_password">
+        <source>action.edit_password</source>
+        <target>Edytuj hasło</target>
+      </trans-unit>
+
+      <trans-unit id="message.registered_successfully">
+        <source>message.registered_successfully</source>
+        <target>Zarejestrowano pomyślnie</target>
+      </trans-unit>
+      <trans-unit id="message.updated_successfully">
+        <source>message.updated_successfully</source>
+        <target>Zaktualizowano pomyślnie</target>
+      </trans-unit>
+      <trans-unit id="message.failed_to_create">
+        <source>message.failed_to_create</source>
+        <target>Nie udało się stworzyć</target>
+      </trans-unit>
+
+            <trans-unit id="message.task_created_successfully">
+              <source>message.task_created_successfully</source>
+              <target>Produkt stworzono pomyślnie</target>
+            </trans-unit>
+            <trans-unit id="action_logout">
+              <source>action_logout</source>
+              <target>Wyloguj</target>
+            </trans-unit>
+            <trans-unit id="action_login">
+              <source>action_login</source>
+              <target>Zaloguj</target>
+            </trans-unit>
+            <trans-unit id="title.category_create">
+              <source>title.category_create</source>
+              <target>Stwórz kategorię</target>
+            </trans-unit>
+            <trans-unit id="title.category_delete">
+              <source>title.category_delete</source>
+              <target>Usuń kategorię</target>
+            </trans-unit>
+            <trans-unit id="title.category_edit">
+              <source>title.category_edit</source>
+              <target>Edytuj kategorię</target>
+            </trans-unit>
+            <trans-unit id="label.product">
+              <source>label.product</source>
+              <target>Produkt</target>
+            </trans-unit>
+            <trans-unit id="label.categories">
+              <source>label.categories</source>
+              <target>Kategorie</target>
+            </trans-unit>
+            <trans-unit id="label.comments">
+              <source>label.comments</source>
+              <target>Komentarze</target>
+            </trans-unit>
+            <trans-unit id="label.category_list">
+              <source>label.category_list</source>
+              <target>Lista kategorii</target>
+            </trans-unit>
+            <trans-unit id="message.delete_confirm">
+              <source>message.delete_confirm</source>
+              <target>Czy na pewno chcesz usunąć?</target>
+            </trans-unit>
+            <trans-unit id="message.admin_only">
+              <source>message.admin_only</source>
+              <target>Ograniczone</target>
+            </trans-unit>
+            <trans-unit id="action.create_category">
+              <source>action.create_category</source>
+              <target>Stwórz kategorię</target>
+            </trans-unit>
+            <trans-unit id="title.category_details">
+              <source>title.category_details</source>
+              <target>Szczegóły kategorii</target>
+            </trans-unit>
+            <trans-unit id="message.tasks_in_category">
+              <source>message.tasks_in_category</source>
+              <target>Produkty w tej kategorii</target>
+            </trans-unit>
+            <trans-unit id="message.no_tasks_available">
+              <source>message.no_tasks_available</source>
+              <target>Nie ma żadnych produktów w tej kategorii</target>
+            </trans-unit>
+            <trans-unit id="label.back_to_list">
+              <source>label.back_to_list</source>
+              <target>Wróć do listy</target>
+            </trans-unit>
+            <trans-unit id="title.comment_create">
+              <source>title.comment_create</source>
+              <target>Stwórz komentarz</target>
+            </trans-unit>
+            <trans-unit id="title.task_delete">
+              <source>title.task_delete</source>
+              <target>Usuń produkt</target>
+            </trans-unit>
+            <trans-unit id="comment.edit">
+              <source>comment.edit</source>
+              <target>Edytuj komentarz</target>
+            </trans-unit>
+            <trans-unit id="title.comment_list">
+              <source>title.comment_list</source>
+              <target>Lista komentarzy</target>
+            </trans-unit>
+            <trans-unit id="label.comment_list">
+              <source>label.comment_list</source>
+              <target>Lista komentarzy</target>
+            </trans-unit>
+            <trans-unit id="label.nick">
+              <source>label.nick</source>
+              <target>Pseudonim</target>
+            </trans-unit>
+            <trans-unit id="label.delete">
+              <source>label.delete</source>
+              <target>Usuń</target>
+            </trans-unit>
+            <trans-unit id="title.comment_details">
+              <source>title.comment_details</source>
+              <target>Szczegóły komentarza</target>
+            </trans-unit>
+            <trans-unit id="label.task">
+              <source>label.task</source>
+              <target>Produkt</target>
+            </trans-unit>
+            <trans-unit id="title.register">
+              <source>title.register</source>
+              <target>Zarejetruj</target>
+            </trans-unit>
+            <trans-unit id="label.register">
+              <source>label.register</source>
+              <target>Zarejestruj</target>
+            </trans-unit>
+            <trans-unit id="title.login">
+              <source>title.login</source>
+              <target>Zaloguj</target>
+            </trans-unit>
+            <trans-unit id="title.signin">
+              <source>title.signin</source>
+              <target>Zaloguj się</target>
+            </trans-unit>
+            <trans-unit id="label.signin">
+              <source>label.signin</source>
+              <target>Zaloguj się</target>
+            </trans-unit>
+            <trans-unit id="action.create_tag">
+              <source>action.create_tag</source>
+              <target>Stwórz tag</target>
+            </trans-unit>
+            <trans-unit id="label.tasks_with_this_tag">
+              <source>label.tasks_with_this_tag</source>
+              <target>Produkty z tym tagiem</target>
+            </trans-unit>
+            <trans-unit id="title.product_create">
+              <source>title.product_create</source>
+              <target>Stwórz produkt</target>
+            </trans-unit>
+            <trans-unit id="title.product_delete">
+              <source>title.product_delete</source>
+              <target>Usuń produkt</target>
+            </trans-unit>
+            <trans-unit id="title.product_edit">
+              <source>title.product_edit</source>
+              <target>Edytuj produkt</target>
+            </trans-unit>
+            <trans-unit id="label.product_list">
+              <source>label.product_list</source>
+              <target>Lista produktów</target>
+            </trans-unit>
+            <trans-unit id="label.logged_as">
+              <source>label.logged_as</source>
+              <target>Zalogowano jako</target>
+            </trans-unit>
+            <trans-unit id="action.create_product">
+              <source>action.create_product</source>
+              <target>Stwórz produkt</target>
+            </trans-unit>
+            <trans-unit id="created.at">
+              <source>created.at</source>
+              <target>Stworzono</target>
+            </trans-unit>
+            <trans-unit id="updated.at">
+              <source>updated.at</source>
+              <target>Zaktualizowano</target>
+            </trans-unit>
+            <trans-unit id="label.category">
+              <source>label.category</source>
+              <target>Kategoria</target>
+            </trans-unit>
+            <trans-unit id="title.product_details">
+              <source>title.product_details</source>
+              <target>Szczegóły produktu</target>
+            </trans-unit>
+            <trans-unit id="message.no_comments_available">
+              <source>message.no_comments_available</source>
+              <target>Nie ma dostępnych komentarzy</target>
+            </trans-unit>
+            <trans-unit id="action.add_comment">
+              <source>action.add_comment</source>
+              <target>Dodaj komentarz</target>
+            </trans-unit>
+            <trans-unit id="label.show">
+              <source>label.show</source>
+              <target>Pokaż</target>
+            </trans-unit>
+
+
+        <trans-unit id="Created successfully">
+            <source>Created successfully</source>
+            <target>Utworzono pomyślnie</target>
+        </trans-unit>
+        <trans-unit id="Category contains tasks">
+            <source>Category contains tasks</source>
+            <target>Kategoria zawiera produkty</target>
+        </trans-unit>
+        <trans-unit id="Deleted successfully">
+            <source>Deleted successfully</source>
+            <target>Usunięto pomyślnie</target>
+        </trans-unit>
+        <trans-unit id="action.register">
+            <source>action.register</source>
+            <target>Zarejestruj</target>
+        </trans-unit>
+        <trans-unit id="Back to list">
+            <source>Back to list</source>
+            <target>Wróc do listy</target>
+        </trans-unit>
+        <trans-unit id="submit">
+            <source>submit</source>
+            <target>Wyślij</target>
+        </trans-unit>
+        <trans-unit id="error">
+            <source>error</source>
+            <target>Błąd</target>
+        </trans-unit>
+        <trans-unit id="Back to categories">
+            <source>Back to categories</source>
+            <target>Wróć do kategorii</target>
+        </trans-unit>
+        <trans-unit id="Logged as">
+            <source>Logged as</source>
+            <target>Zalogowano jako</target>
+        </trans-unit>
+        <trans-unit id="title.user_details">
+            <source>title.user_details</source>
+            <target>Szczegóły użytkownika</target>
+        </trans-unit>
+        <trans-unit id="User ID">
+            <source>User ID</source>
+            <target>ID użytkownika</target>
+        </trans-unit>
+
+        <trans-unit id="action.add_favorite">
+             <source>action.add_favorite</source>
+             <target>Dodaj do ulubionych</target>
+        </trans-unit>
+
+        <trans-unit id="label.favorites">
+            <source>label.favorites</source>
+             <target>Ulubione</target>
+          </trans-unit>
+        <trans-unit id="action.delete_favorite">
+             <source>action.delete_favorite</source>
+             <target>Usuń z ulubionych</target>
+        </trans-unit>
+        <trans-unit id="title.delete_favorite">
+             <source>action.delete_favorite</source>
+             <target>Usuń z listy ulubionych</target>
+        </trans-unit>
+        <trans-unit id="message.added_successfully">
+             <source>message.added_successfully</source>
+             <target>Dodano pomyślnie</target>
+        </trans-unit>
+
+
+    </body>
+  </file>
+</xliff>

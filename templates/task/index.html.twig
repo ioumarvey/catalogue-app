@@ -1,0 +1,138 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.record_list'|trans }}
+{% endblock %}
+
+{% block body %}
+    <nav class="navbar" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ path('task_index') }}">{{ 'label.product'|trans }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('category_index') }}">{{ 'label.categories'|trans }}</a></li>
+            {% if is_granted('ROLE_ADMIN') %}
+            <li class="breadcrumb-item"><a href="{{ path('tag_index') }}">{{ 'label.tags'|trans }}</a></li>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <li class="breadcrumb-item"><a href="{{ path('comment_index') }}">{{ 'label.comments'|trans }}</a></li>
+            {% endif %}
+            {% if is_granted('ROLE_USER') %}
+            <li class="breadcrumb-item"><a href="{{ path('task_favorited') }}">{{ 'label.favorites'|trans }}</a></li>
+            {% endif %}
+            <li class="breadcrumb-item-active" aria-current="page">{{ 'label.product_list'|trans }}</li>
+        </ol>
+        <div>
+            {% if is_granted('ROLE_USER') %}
+                <a href="{{ path('app_logout') }}">{{ 'action.logout'|trans }}</a>
+            {% else %}
+                <a href="{{ path('app_logout') }}" style="margin-right: 10px;">{{ 'action.login'|trans }}</a>
+                <a href="{{ path('app_register') }}">{{ 'action.register'|trans }}</a>
+            {% endif %}
+        </div>
+    </nav>
+
+
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="logged-user">
+            <p style="margin-right: 5px">{{ 'label.logged_as'|trans }}</p><a href="{{ path('user_index') }}" class="user">{{ app.user.userIdentifier }}</a>
+        </div>
+    {% elseif is_granted('ROLE_USER') %}
+            <div class="logged-user">
+                <p style="margin-right: 5px">{{ 'label.logged_as'|trans }}</p><a class="user" href="{{ path('user_show', {'id': app.user.id}) }}">{{ app.user.email }}</a>
+            </div>
+        {% else %}
+    {% endif %}
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <a class="add-btn" href="{{ path('task_create') }}">{{ 'action.create_product'|trans }}</a>
+    {% else %}
+    {% endif %}
+
+    {% if pagination is defined and pagination.items|length %}
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{ knp_pagination_sortable(pagination, 'label.title'|trans, 'task.title') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'created.at'|trans, 'task.createdAt') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'updated.at'|trans, 'task.updatedAt') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.category'|trans, 'category.title') }}</th>
+                <th>{{ 'label.tags'|trans }}</th>
+                <th>{{ 'action.show'|trans }}</th>
+                {% if is_granted('ROLE_USER') %}
+                <th>{{ 'action.edit'|trans }}</th>
+                <th>{{ 'action.delete'|trans }}</th>
+                <th>{{ 'action.add_favorite'|trans }}</th>
+                {% endif %}
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for task in pagination.items %}
+                <tr>
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.createdAt|format_date('long') }}</td>
+                    <td>{{ task.updatedAt|format_date('long') }}</td>
+                    <td>
+                        <a href="{{ url('task_index', {'filters.category_id' : task.category.id}) }}" title="{{ task.category.title }}">
+                            {{ task.category.title }}
+                        </a>
+                    </td>
+                    <td>
+                        {% if task.tags is defined and task.tags|length %}
+                            {% for tag in task.tags %}
+                                <a href="{{ url('task_index', {'filters.tag_id' : tag.id}) }}" title="{{ tag.title }}">
+                                    {{ tag.title }}
+                                </a>
+                            {% endfor %}
+                        {% else %}
+                            &nbsp;
+                        {% endif %}
+                    </td>
+                    <td><a href="{{ path('task_show', {'id': task.id}) }}">{{ 'action.show'|trans }}</a></td>
+                    {% if is_granted('ROLE_USER') %}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <td><a href="{{ path('task_edit', {'id': task.id}) }}">{{ 'action.edit'|trans }}</a></td>
+                        <td><a href="{{ path('task_delete', {'id': task.id}) }}">{{ 'action.delete'|trans }}</a></td>
+
+                    {% else %}
+                        <td>{{ 'message.admin_only'|trans }}</td>
+                        <td>{{ 'message.admin_only'|trans }}</td>
+                    {% endif %}
+                    {% endif %}
+
+                    {% if is_granted('ROLE_USER') %}
+                    <td>
+                        {% if app.user in task.favorited%}
+                            <a href="{{ url('task_delete_favorite', {id: task.id}) }}" title="{{ 'action.delete_favorite'|trans }}">
+                                {{ 'action.delete_favorite'|trans }}
+                            </a>
+                        {% else %}
+                            <a href="{{ url('task_add_favorite', {id: task.id}) }}" title="{{ 'action.add_favorite'|trans }}">
+                                {{ 'action.add_favorite'|trans }}
+                            </a>
+
+                        {% endif %}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+    {% else %}
+        <p>
+            {{ 'message.empty_list'|trans }}
+        </p>
+    {% endif %}
+
+
+
+{% endblock %}

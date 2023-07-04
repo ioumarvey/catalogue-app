@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --light: #C4B0FF;
+    --dark-blue: #0A0059;
+    --blue: #4942E4;
+    --light-blue: #8696FE;
+    --white: #ECE5F0;
+    --black: #050030;
+    --pink: #DC4BF2;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* Navbar */
+
+.navbar {
+    background-color: var(--blue);
+    margin-bottom: 2em;
+    padding: 5px 15px;
+}
+
+.breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.navbar a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--pink);
+    font-size: 2em;
+    text-transform: uppercase;
+    text-shadow: -1px -1px 0 var(--black), 1px -1px 0 var(--black), -1px 1px 0 var(--black), 1px 1px 0 var(--black);
+}
+
+.navbar a:hover {
+    color: var(--blue);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--pink);
+    font-size: 2em;
+    text-shadow: -1px -1px 0 var(--black), 1px -1px 0 var(--black), -1px 1px 0 var(--black), 1px 1px 0 var(--black);
+}
+
+.breadcrumb-item-active{
+    color: var(--black);
+    font-size: 2em;
+    text-shadow: -1px -1px 0 var(--black), 1px -1px 0 var(--black), -1px 1px 0 var(--black), 1px 1px 0 var(--black);
+    padding-left: 15px;
+    text-transform: uppercase;
+}
+
+.logged-user {
+    display: flex;
+    color: var(--white);
+    font-size: 1em;
+    font-weight: bold;
+}
+
+/* Bottom */
+
+.navigation.text-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-btn {
+    width: fit-content !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto auto 20px;
+
+    padding: 10px 25px;
+    border-radius: 15px;
+    text-decoration: none;
+
+    background-color: var(--pink) !important;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.add-btn:hover {
+    background-color: var(--blue) !important;
+    color: var(--black) !important;
+}
+
+/* Page links */
+
+
+.page-item:first-child .page-link {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    border: none;
+}
+
+
+.page-item.active .page-link {
+    background-color: var(--blue);
+    color: black;
+    border: none;
+}
+
+.page-link {
+    background-color: var(--pink);
+    color: #07020D;
+    border: none;
+}
+
+.page-link:hover{
+    background-color: var(--blue);
+    color: var(--black);
+}
+
+
+/* Table */
+
+.sortable {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.sortable:hover {
+    color: var(--pink);
+}
+
+.asc{
+    text-decoration: none !important;
+    color: var(--pink) !important;
+}
+
+
+th {
+    background-color: var(--dark-blue) !important;
+    color: var(--white);
+    border-right: solid 2px var(--white);
+}
+
+tr {
+    background-color: var(--light-blue);
+    border-bottom: none;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: var(--blue);
+}
+
+td {
+    border-right: solid 2px black;
+}
+
+a {
+    text-decoration: none;
+    color: var(--pink);
+}
+
+td > a{
+    text-shadow: -1px -1px 0 var(--black), 1px -1px 0 var(--black), -1px 1px 0 var(--black), 1px 1px 0 var(--black);
+}
+
+
+/* Login */
+
+.logging {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 800px;
+    margin: 100px auto;
+    border-radius: 50px;
+    border: 10px groove var(--blue);
+    background-color: var(--light-blue);
+}
+
+
+.user {
+    color: var(--pink);
+}
+
+
+.sign {
+    color: var(--dark-blue);
+    padding: 15px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 2em;
+    text-transform: uppercase;
+
+}
+
+label {
+    color: var(--black);
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+input {
+    width: 50% !important;
+    padding: 12px 20px !important;
+    margin: 8px 0 !important;
+    border: none !important;
+    background-color: var(--blue) !important;
+    color: var(--black);
+    font-weight: bold !important;
+
+}
+
+.sign-in {
+    width: fit-content;
+    margin: 20px;
+    padding: 10px 25px;
+    border-radius: 15px;
+    text-decoration: none;
+    border: none;
+
+    background-color: var(--dark-blue);
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.sign-in:hover {
+    color: var(--pink);
+}
+
+
+/* Forms */
+
+.form {
+    color: white !important;
+}
+
+/* User */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 800px;
+    margin: 100px auto;
+    border-radius: 50px;
+    border: 10px groove var(--blue);
+    background-color: var(--light-blue);
+}
+
+.user-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto auto 20px;
+    color: var(--dark-blue);
+    padding: 15px;
+    font-weight: bold;
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+.user-info {
+    color: var(--white);
+}
+
+.edit-btn {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.edit-btn > a {
+    width: fit-content;
+    margin: 10px;
+    padding: 10px 25px;
+    border-radius: 15px;
+    text-decoration: none;
+    border: none;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.user-text {
+    color: var(--dark-blue);
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.user-data {
+    color: var(--blue);
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.back-btn {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto auto 20px;
+
+    padding: 10px 25px;
+    border-radius: 15px;
+    text-decoration: none;
+
+    background-color: var(--blue);
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.back-btn:hover {
+    background-color: var(--pink);
+    color: var(--black);
+}
+
+.edit-btn > a:hover {
+    background-color: var(--pink);
+    color: var(--black);
+}
+
+/* Editing */
+
+.editing {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 100px auto;
+    border-radius: 50px;
+    border: 10px groove var(--blue);
+    background-color: var(--light-blue);
+}

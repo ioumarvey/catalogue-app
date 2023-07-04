@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.user_details'|trans({'%id%': user.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="user-details">{{ 'title.user_details'|trans({'%id%': user.id|default('')}) }}</h1>
+
+        {% if user is defined and user|length %}
+            <h1 class="user-text">{{ 'label.user_id'|trans }}</h1>
+            <h1 class="user-data">{{ user.id }}</h1>
+            <h1 class="user-text">{{ 'label.email'|trans }}</h1>
+            <h1 class="user-data">{{ user.email }}</h1>
+
+            {% if is_granted('EDIT_USER_DATA', user) %}
+                <div class="edit-btn">
+                <a href="{{ url('user_edit_email', {'id': user.id}) }}" title="{{ 'action.edit'|trans }}">
+                    {{ 'title.user_email_edit'|trans }}</a>
+                <a href="{{ url('user_edit', {'id': user.id}) }}" title="{{ 'action.edit'|trans }}">
+                    {{ 'title.user_password_edit'|trans }}</a>
+                </div>
+            {% endif %}
+
+            {% if is_granted('ROLE_ADMIN') %}
+                <p>
+                    <a class="back-btn" href="{{ url('user_index') }}" title="{{ 'action.back_to_list'|trans }}">
+                        {{ 'label.back_to_list'|trans }}
+                    </a>
+                </p>
+            {% else %}
+                <p>
+                    <a class="back-btn" href="{{ url('task_index') }}" title="{{ 'action.back_to_list'|trans }}">
+                        {{ 'label.back_to_list'|trans }}
+                    </a>
+                </p>
+            {% endif %}
+
+        {% else %}
+            <p>
+                {{ 'message.record_not_found'|trans }}
+            </p>
+        {% endif %}
+    </div>
+{% endblock %}

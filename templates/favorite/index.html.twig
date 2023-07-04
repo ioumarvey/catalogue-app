@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'label.favorites'|trans }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'label.favorites'|trans }}</h1>
+    {% if pagination is defined and pagination.items|length %}
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{ knp_pagination_sortable(pagination, 'label.id'|trans, 'task.id') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'created.at'|trans, 'task.createdAt') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'updated.at'|trans, 'task.updatedAt') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.title'|trans, 'task.title') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.category'|trans, 'category.title') }}</th>
+                <th>{{ 'label.tags'|trans }}</th>
+                <th colspan="
+                {% if is_granted('ROLE_ADMIN') %}
+                4
+                {%  else %}
+                2
+                {% endif %}
+                ">{{ 'label.actions'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for task in pagination.items %}
+                <tr>
+                    <td>{{ task.id }}</td>
+                    <td>{{ task.createdAt|format_date('long') }}</td>
+                    <td>{{ task.updatedAt|format_date('long') }}</td>
+                    <td>{{ task.title }}</td>
+                    <td>
+                        <a href="{{ url('task_index', {'filters.category_id' : task.category.id}) }}" title="{{ task.category.title }}">
+                            {{ task.category.title }}
+                    </td>
+                    <td>
+                        {% if task.tags is defined and task.tags|length %}
+                            {% for tag in task.tags %}
+                                <a href="{{ url('task_index', {'filters.tag_id' : tag.id}) }}" title="{{ tag.title }}">
+                                    {{ tag.title }}
+                                </a>
+                            {% endfor %}
+                        {% else %}
+                            &nbsp;
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a  href="{{ url('task_show', {id: task.id}) }}" title="{{ 'action.show'|trans }}">
+                            {{ 'action.show'|trans }}
+                        </a>
+                    </td>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <td>
+                            <a href="{{ url('task_edit', {id: task.id}) }}" title="{{ 'action.edit'|trans }}">
+                                {{ 'action.edit'|trans }}
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ url('task_delete', {id: task.id}) }}" title="{{ 'action.delete'|trans }}">
+                                {{ 'action.delete'|trans }}
+                            </a>
+                        </td>
+                    {%  endif %}
+                    <td>
+                        {% if app.user in task.favorited%}
+                            <a href="{{ url('task_delete_favorite', {id: task.id}) }}" title="{{ 'action.delete_favorite'|trans }}">
+                                {{ 'action.delete_favorite'|trans }}
+                            </a>
+                        {% else %}
+                            <a href="{{ url('task_add_favorite', {id: task.id}) }}" title="{{ 'action.add_favorite'|trans }}">
+                                {{ 'action.add_favorite'|trans }}
+                            </a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+        <a class="back-btn" href="{{ url('task_index') }}" title="{{ 'action.back_to_list'|trans }}">
+            {{ 'label.back_to_list'|trans }}
+        </a>
+    {% else %}
+        <p>
+            {{ 'message.empty_list'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}

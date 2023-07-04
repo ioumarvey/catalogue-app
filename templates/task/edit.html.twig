@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.product_edit'|trans({'%id%': task.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    {% include 'default/_form.html.twig' with {
+        page_title: 'action.edit'|trans({'%id%': task.id|default('')}),
+        form: form,
+        submit_label: 'action.edit'|trans,
+        back_to_list_path: 'task_index',
+    } %}
+{% endblock %}

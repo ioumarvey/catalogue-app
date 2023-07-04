@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.user_list'|trans }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="user-details">{{ 'title.user_list'|trans }}</h1>
+        {% if pagination is defined and pagination.items|length %}
+            <div class="navigation text-center">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>{{ knp_pagination_sortable(pagination, 'label.user_id'|trans, 'user.id') }}</th>
+                    <th>{{ knp_pagination_sortable(pagination, 'label.user_email'|trans, 'user.email') }}</th>
+                    <th>{{ 'label.actions'|trans }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in pagination.items %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>
+                            <a href="{{ url('user_show', {id: user.id}) }}" title="{{ 'action.show'|trans }}">
+                                {{ 'label.show'|trans }}
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="navigation text-center">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+
+            <a class="back-btn" href="{{ path('task_index') }}">{{ 'label.back_to_list'|trans }}</a>
+
+        {% else %}
+            <p>
+                {{ 'message.empty_list'|trans }}
+            </p>
+        {% endif %}
+    </div>
+
+{% endblock %}

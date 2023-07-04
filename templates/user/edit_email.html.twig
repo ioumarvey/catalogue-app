@@ -1,0 +1,12 @@
+{% include 'default/_form.html.twig' with {
+    page_title: 'title.user_email_edit'|trans,
+    page_title_param: {'%id%': user.id},
+    submit_label: 'label.update',
+    attr: {
+        method: 'PUT',
+        action: url('user_edit_email', {'id': user.id}),
+    },
+    form: form,
+    submit_label: 'action.edit'|trans,
+    back_to_list_path: 'task_index',
+} %}
