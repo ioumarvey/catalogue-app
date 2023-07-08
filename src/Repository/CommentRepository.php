@@ -72,6 +72,7 @@ class CommentRepository extends ServiceEntityRepository
         $entityManager->persist($comment);
         $entityManager->flush();
     }
+    
     /**
      * Remove entity.
      */
