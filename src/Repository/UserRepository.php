@@ -8,11 +8,10 @@ namespace App\Repository;
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use Symfony\Bridge\Doctrine\Security\User\UserLoaderInterface;
-use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
 use Doctrine\ORM\QueryBuilder;
+
 
 /**
  * Class UserRepository.
@@ -66,7 +65,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
         $user->setPassword($newHashedPassword);
 
-        $this->_em->persist($user); // U¿ywamy _em do dostêpu do EntityManager
+        $this->_em->persist($user); // UÂ¿ywamy _em do dostÃªpu do EntityManager
         $this->_em->flush();
     }
 
