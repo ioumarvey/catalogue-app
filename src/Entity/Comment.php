@@ -1,4 +1,7 @@
 <?php
+/**
+ * Comment entity.
+ */
 
 namespace App\Entity;
 
@@ -10,12 +13,14 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Class Comment.
  *
- * @psalm-suppress MissingConstructor
+ * @ORM\Entity(repositoryClass=CommentRepository::class)
+ * @ORM\Table(name="comments")
  */
 #[ORM\Entity(repositoryClass: CommentRepository::class)]
 #[ORM\Table(name: 'comments')]
 class Comment
 {
+    
     /**
      * Primary key.
      */
@@ -50,6 +55,8 @@ class Comment
 
     /**
      * Getter for Id.
+     *
+     * @return int|null
      */
     public function getId(): ?int
     {
@@ -58,6 +65,8 @@ class Comment
 
     /**
      * Getter for Content.
+     *
+     * @return string|null
      */
     public function getContent(): ?string
     {
@@ -66,6 +75,10 @@ class Comment
 
     /**
      * Setter for Content.
+     *
+     * @param string $content
+     *
+     * @return $this
      */
     public function setContent(string $content): self
     {
@@ -74,12 +87,21 @@ class Comment
         return $this;
     }
 
+    /**
+     * Getter for Author.
+     *
+     * @return User|null
+     */
     public function getAuthor(): ?User
     {
         return $this->author;
     }
 
     /**
+     * Setter for Author.
+     *
+     * @param User|null $author
+     *
      * @return $this
      */
     public function setAuthor(?User $author): self
@@ -91,6 +113,8 @@ class Comment
 
     /**
      * Getter for Nick.
+     *
+     * @return string|null
      */
     public function getNick(): ?string
     {
@@ -99,6 +123,8 @@ class Comment
 
     /**
      * Setter for Nick.
+     *
+     * @param string $nick
      *
      * @return $this
      */
@@ -111,6 +137,8 @@ class Comment
 
     /**
      * Getter for Task.
+     *
+     * @return Task|null
      */
     public function getTask(): ?Task
     {
@@ -119,9 +147,19 @@ class Comment
 
     /**
      * Setter for Task.
+     *
+     * @param Task|null $task
      */
     public function setTask(?Task $task): void
     {
         $this->task = $task;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getTaskId(): ?int
+    {
+        return $this->task ? $this->task->getId() : null;
     }
 }
